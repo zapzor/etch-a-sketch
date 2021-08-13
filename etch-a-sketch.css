@@ -1,0 +1,10 @@
+body {
+background-color: black;
+}
+
+#div {
+display: grid;
+grid-template-columns: 70px;
+background: white;
+position: absolute;
+}

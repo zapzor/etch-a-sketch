@@ -1,10 +1,17 @@
+
 body {
-background-color: black;
+background-color:rgb(0, 0, 0);
 }
 
-#div {
+#container {
 display: grid;
-grid-template-columns: 70px;
-background: white;
+grid-template-columns: repeat(16, 20px);
+grid-template-rows: repeat(16, 20px);
+gap: 6px;
 position: absolute;
+top: 30%;
+right: 40%;
 }
+
+
+

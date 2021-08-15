@@ -1,6 +1,12 @@
-const div = document.querySelector('#div')
+const container = document.querySelector('#container')
 
-const divContent = document.createElement('div')
-divContent.textContent = 'HELLO HELLO HELLO';
-
-div.appendChild(divContent)
+function makeDiv() {
+    for (i = 0; i < 256; i++) {
+        let div = document.createElement('div');
+        div.setAttribute('style', 'color: blue; width: 25px; height: 25px; background: orange');    
+        div.addEventListener('mouseenter', function(e) {
+            e.target.style.backgroundColor = 'white';
+        });
+        container.appendChild(div)
+}}
+makeDiv()

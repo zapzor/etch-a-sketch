@@ -9,8 +9,8 @@ makeGridDiv(16)
 function makeGridDiv(rowCol) {
 
     container.setAttribute('style',
-    'grid-template-columns: repeat(' + rowCol + ', 1fr',
-    'grid-template-rows: repeat(' + rowCol + ', 1fr');
+    'grid-template-columns: repeat(' + rowCol + ', auto',
+    'grid-template-rows: repeat(' + rowCol + ', auto');
 
     for (i = 0; i < rowCol * rowCol; i++) {
         divs = document.createElement('divs');
@@ -30,8 +30,8 @@ function refreshGrid(){
     
     rowCol = prompt('How many squares would you like to use?')
     container.setAttribute('style',
-    'grid-template-columns: repeat(' + rowCol + ', 1fr',
-    'grid-template-rows: repeat(' + rowCol + ', 1fr');
+    'grid-template-columns: repeat(' + rowCol + ', auto',
+    'grid-template-rows: repeat(' + rowCol + ', auto');
     
     for (i = 0; i < rowCol * rowCol; i++) {
         if(rowCol <= 100) {

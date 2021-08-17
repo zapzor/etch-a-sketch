@@ -1,4 +1,4 @@
-//Variables
+//Variables and buttons
 const container = document.querySelector('#container');
 const refresh = document.querySelector('#btn');
 const choose = document.querySelector('#chooze');
@@ -7,9 +7,15 @@ let div;
 makeGridDiv(16)
 //Creates 256 individual divs for 16x16 etch sketch grid
 function makeGridDiv(rowCol) {
+
+    container.setAttribute('style',
+    'grid-template-columns: repeat(' + rowCol + ', 1fr',
+    'grid-template-rows: repeat(' + rowCol + ', 1fr');
+
     for (i = 0; i < rowCol * rowCol; i++) {
         divs = document.createElement('divs');
-        divs.setAttribute('style','width: 30px; height: 30px; background: orange');    
+        divs.setAttribute('style',
+        'width: 100%; background: orange');    
         divs.addEventListener('mouseover', function(e) {
             e.target.style.backgroundColor = 'white';
         });
@@ -21,15 +27,21 @@ function refreshGrid(){
     document
     .querySelectorAll('divs')
     .forEach((e) => e.parentNode.removeChild(e));
+    
     rowCol = prompt('How many squares would you like to use?')
+    container.setAttribute('style',
+    'grid-template-columns: repeat(' + rowCol + ', 1fr',
+    'grid-template-rows: repeat(' + rowCol + ', 1fr');
+    
     for (i = 0; i < rowCol * rowCol; i++) {
         if(rowCol <= 100) {
          div = document.createElement('div');
-         div.setAttribute('style','width: 30px; height: 30px; background: orange');    
-         div.addEventListener('mouseover', function(e) {
+         div.setAttribute('style',
+         'width: auto; background: orange'); 
+     div.addEventListener('mouseover', function(e) {
          e.target.style.backgroundColor = 'white';
      })}else {
-         alert('Please choose a number less than (or equal to) 100');
+         alert('Please choose a number less than or equal to 100');
          break;
      }
      container.appendChild(div)

@@ -11,7 +11,7 @@ max-height: 500px;
 position: absolute;
 top: 25%;
 right: 38%;
-
+grid-gap: 1px;
 }
 
 #btn {

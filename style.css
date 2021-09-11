@@ -1,23 +1,40 @@
 body {
-    background-color:rgb(0, 0, 0);
+  background-color:rgba(0, 0, 0, 0.74);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
 }
 
-#container {
+button {
+  background-color: rgba(255, 166, 0, 0.651);
+  border: none;
+  font-size: 36px;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  color: white;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1
+}
+
+.grid {
 display: grid;
 width: 100%;
-max-width: 500px;
+max-width: 50vh;
 height: 100%;
-max-height: 500px;
-position: absolute;
-top: 25%;
-right: 38%;
+max-height: 50vh;
 grid-gap: 1px;
 }
 
-#btn {
-    position: absolute;
-    top: 77%;
-    right: 50%;
+.refresh-button {
+  margin-top: 25px;
 }
-
-

@@ -1,36 +1,33 @@
 // Variables and buttons
-const container = document.querySelector('.grid')
+const grid = document.querySelector('.grid')
 const refresh = document.querySelector('.refresh-button')
 refresh.addEventListener('click', (refreshGrid))
-makeGridDiv(16)
+makeGridDivs(16)
 
-// Creates 256 individual divs for 16x16 etch-a-sketch grid
-function makeGridDiv(rowCol) {
-  container.setAttribute('style',
-  'grid-template-columns: repeat(' + rowCol + ', auto',
-  'grid-template-rows: repeat(' + rowCol + ', auto')
+// Creates individual divs for 16x16 etch-a-sketch grid
+function makeGridDivs(rowCol) {
+  grid.style.gridTemplateColumns = `repeat(${rowCol}, auto)`
 
   for (i = 0; i < rowCol * rowCol; i++) {
-    divs = document.createElement('div')
-    divs.setAttribute('style',
+   const gridDivs = document.createElement('div')
+    gridDivs.setAttribute('style',
     'background: orange')
-    container.appendChild(divs)
+    grid.appendChild(gridDivs)
 
     // Allows grid divs to change color on mouse passover
-    divs.addEventListener('mouseover', function(e) {
+    gridDivs.addEventListener('mouseover', function(e) {
       e.target.style.backgroundColor = 'black'
     })
 }}
 
-// Button that refreshes grid when clicked
+// Button that clears grid and asks for user input when clicked
 function refreshGrid(){
+  rowCol = prompt('How many squares would you like to use?')
 
-    rowCol = prompt('How many squares would you like to use?')
-    if (rowCol <= 100)
-      container.setAttribute('style',
-      'grid-template-columns: repeat(' + rowCol + ', auto',
-      'grid-template-rows: repeat(' + rowCol + ', auto')
-    else {
-      alert('Please choose a number that is less than 100')
-    }
+  if (rowCol <= 100) {
+    grid.innerHTML = ""
+    makeGridDivs(rowCol)
+  } else {
+    alert('Please choose a number that is less than 100')
+  }
 }
